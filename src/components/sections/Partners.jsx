@@ -98,7 +98,7 @@ export default function Partners() {
                   <img
                     src="/yarn-icon.png"
                     alt=""
-                    className="w-16 h-auto opacity-50"
+                    className="w-16 h-16 object-contain opacity-50"
                   />
                 </div>
 
