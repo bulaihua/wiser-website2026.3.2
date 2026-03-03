@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { globalFootprint } from '../data/companyData';
 
 export default function AboutGlobal() {
@@ -78,7 +79,7 @@ export default function AboutGlobal() {
         <p className="text-gray-600 mb-8">
           Join the list of prestigious brands that trust Wiser Enterprise.
         </p>
-        <a href="/contact" className="btn-primary">Get in Touch</a>
+        <Link to="/contact" className="btn-primary">Get in Touch</Link>
       </motion.div>
     </div>
   );

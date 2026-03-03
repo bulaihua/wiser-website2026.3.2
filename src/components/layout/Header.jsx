@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { navigation, servicesSubmenu, productsSubmenu, aboutSubmenu } from '../../data/companyData';
 
 export default function Header() {
@@ -48,13 +49,13 @@ export default function Header() {
       <nav className="container-custom">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <a href="/" className="flex-shrink-0">
+          <Link to="/" className="flex-shrink-0">
             <img
               src="/logo.png"
               alt="Wiser Enterprise Logo"
               className="h-14 w-auto object-contain"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation - lg breakpoint (1024px+) */}
           <div className="hidden lg:flex items-center flex-1 justify-center">

@@ -129,13 +129,13 @@ export default function ProductDetail() {
           <p className="text-gray-600 mb-8 max-w-md mx-auto">
             Contact us to discuss your requirements and get a customized quote.
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="btn-primary inline-flex items-center gap-2"
           >
             <Mail className="w-4 h-4" />
             Get in Touch
-          </a>
+          </Link>
         </motion.div>
       </div>
     </div>

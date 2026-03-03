@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const milestones = [
   { year: '2006', title: 'Foundation', description: 'Wiser Enterprise Ltd. was established in China.' },
@@ -66,7 +67,7 @@ export default function AboutHistory() {
         <p className="text-gray-600 mb-8">
           Join the list of prestigious brands that trust Wiser Enterprise.
         </p>
-        <a href="/contact" className="btn-primary">Get in Touch</a>
+        <Link to="/contact" className="btn-primary">Get in Touch</Link>
       </motion.div>
     </div>
   );

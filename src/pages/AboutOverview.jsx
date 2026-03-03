@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { companyInfo } from '../data/companyData';
 
 export default function AboutOverview() {
@@ -199,7 +200,7 @@ export default function AboutOverview() {
         <p className="text-gray-600 mb-8">
           Join the list of prestigious brands that trust Wiser Enterprise.
         </p>
-        <a href="/contact" className="btn-primary">Get in Touch</a>
+        <Link to="/contact" className="btn-primary">Get in Touch</Link>
       </motion.div>
     </div>
   );
