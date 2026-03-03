@@ -8,6 +8,15 @@ export const companyInfo = {
   description: "A global fashion group delivering complete solutions from design concept to final delivery. With 20 years of expertise and facilities across China and Southeast Asia, we help brands worldwide bring their visions to life—faster, smarter, and more efficiently."
 };
 
+export const socialLinks = [
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/company/wiser-enterprise-ltd",
+    icon: "linkedin",
+    color: "#0077B5"
+  }
+];
+
 export const brands = [
   { name: "Calvin Klein", logo: "/logos/placeholder-ck.svg" },
   { name: "Tommy Hilfiger", logo: "/logos/placeholder-th.svg" },

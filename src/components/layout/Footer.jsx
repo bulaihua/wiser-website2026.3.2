@@ -1,6 +1,5 @@
-import { Mail, MapPin, ArrowUp } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { companyInfo } from '../../data/companyData';
+import { Mail, MapPin, ArrowUp, Linkedin } from 'lucide-react';
+import { companyInfo, socialLinks } from '../../data/companyData';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,10 +8,19 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const getSocialIcon = (iconName) => {
+    switch (iconName) {
+      case 'linkedin':
+        return Linkedin;
+      default:
+        return Linkedin;
+    }
+  };
+
   return (
     <footer className="bg-accent-black text-white">
-      <div className="container-custom py-6 md:py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+      <div className="container-custom py-8 md:py-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
@@ -22,9 +30,30 @@ export default function Footer() {
                 className="h-12 w-auto object-contain"
               />
             </div>
-            <p className="text-gray-400 leading-relaxed max-w-md mb-3 text-base">
+            <p className="text-gray-400 leading-relaxed max-w-md mb-4 text-base">
               Beyond Manufacturing.
             </p>
+
+            {/* Social Media Icons */}
+            {socialLinks.length > 0 && (
+              <div className="flex items-center gap-4">
+                {socialLinks.map((social) => {
+                  const Icon = getSocialIcon(social.icon);
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors group"
+                      aria-label={social.name}
+                    >
+                      <Icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                    </a>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           {/* Contact */}
@@ -54,7 +83,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-3 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="pt-4 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500">
             &copy; {currentYear} Wiser Enterprise Ltd. All rights reserved.
           </p>
