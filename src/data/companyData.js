@@ -11,7 +11,7 @@ export const companyInfo = {
 export const socialLinks = [
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/company/wiser-enterprise-ltd",
+    url: "https://www.linkedin.com/company/wiser-enterprise",
     icon: "linkedin",
     color: "#0077B5"
   }
