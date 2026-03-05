@@ -6,7 +6,6 @@ import { navigation, servicesSubmenu, productsSubmenu, aboutSubmenu } from '../.
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileSubmenus, setMobileSubmenus] = useState({});
   const location = useLocation();
 
@@ -23,14 +22,6 @@ export default function Header() {
     setIsMobileMenuOpen(false);
     setMobileSubmenus({});
   }, [location.pathname]);
-
-  const handleDropdownEnter = (name) => {
-    setOpenDropdown(name);
-  };
-
-  const handleDropdownLeave = () => {
-    setOpenDropdown(null);
-  };
 
   const toggleMobileSubmenu = (name) => {
     setMobileSubmenus(prev => ({
@@ -70,29 +61,26 @@ export default function Header() {
                 item.hasDropdown ? (
                   <div
                     key={item.name}
-                    className="relative dropdown-container"
-                    onMouseEnter={() => handleDropdownEnter(item.name)}
-                    onMouseLeave={handleDropdownLeave}
+                    className="relative group"
                   >
-                    <button className="text-[15px] font-semibold text-gray-700 hover:text-accent-black transition-colors flex items-center gap-1.5">
+                    <button className="text-[15px] font-semibold text-gray-700 hover:text-accent-black transition-colors flex items-center gap-1.5 py-4">
                       {item.name}
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${openDropdown === item.name ? 'rotate-180' : ''}`} />
+                      <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
                     </button>
-                    {openDropdown === item.name && (
-                      <div className="absolute top-full left-0 right-0 flex justify-center mt-2">
-                        <div className="bg-white border border-gray-100 rounded-lg shadow-lg overflow-hidden min-w-[200px]">
-                          {getSubmenu(item.name).map((subItem) => (
-                            <Link
-                              key={subItem.name}
-                              to={subItem.href}
-                              className="block px-5 py-3 text-[15px] text-gray-600 hover:text-accent-black hover:bg-gray-50 transition-colors whitespace-nowrap text-center"
-                            >
-                              {subItem.name}
-                            </Link>
-                          ))}
-                        </div>
+                    {/* Dropdown menu with invisible bridge to prevent gap */}
+                    <div className="absolute left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                      <div className="bg-white border border-gray-100 rounded-lg shadow-lg overflow-hidden min-w-[200px]">
+                        {getSubmenu(item.name).map((subItem) => (
+                          <Link
+                            key={subItem.name}
+                            to={subItem.href}
+                            className="block px-5 py-3 text-[15px] text-gray-600 hover:text-accent-black hover:bg-gray-50 transition-colors whitespace-nowrap text-center"
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
                       </div>
-                    )}
+                    </div>
                   </div>
                 ) : (
                   <Link
