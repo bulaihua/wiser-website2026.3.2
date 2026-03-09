@@ -14,6 +14,12 @@ export const socialLinks = [
     url: "https://www.linkedin.com/company/wiser-enterprise",
     icon: "linkedin",
     color: "#0077B5"
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/wiser.enterprise",
+    icon: "instagram",
+    color: "#E4405F"
   }
 ];
 

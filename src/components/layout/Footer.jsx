@@ -1,4 +1,4 @@
-import { Mail, MapPin, ArrowUp, Linkedin } from 'lucide-react';
+import { Mail, MapPin, ArrowUp, Linkedin, Instagram } from 'lucide-react';
 import { companyInfo, socialLinks } from '../../data/companyData';
 
 export default function Footer() {
@@ -12,6 +12,8 @@ export default function Footer() {
     switch (iconName) {
       case 'linkedin':
         return Linkedin;
+      case 'instagram':
+        return Instagram;
       default:
         return Linkedin;
     }
