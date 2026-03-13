@@ -23,7 +23,7 @@ export const socialLinks = [
   },
   {
     name: "YouTube",
-    url: "https://www.youtube.com/@wiserenterprise",
+    url: "https://www.youtube.com/channel/UC4ozF_Gt7Jmxv6jfMKkEU5g",
     icon: "youtube",
     color: "#FF0000"
   }
