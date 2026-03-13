@@ -32,7 +32,7 @@ export default function Footer() {
       case 'instagram':
         return InstagramIcon;
       case 'youtube':
-        return YoutubeIcon;
+        return YouTubeIcon;
       default:
         return Linkedin;
     }
